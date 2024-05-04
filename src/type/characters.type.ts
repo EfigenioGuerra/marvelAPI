@@ -1,6 +1,4 @@
-import { Schema, model } from "mongoose";
-
-const charactersSchema = new Schema({
+export interface charactersType{
     id: String,
     name: String,
     description: String,
@@ -19,7 +17,4 @@ const charactersSchema = new Schema({
         returned: Number
     },
     imgUrl: String
-
-}, { timestamps: true });
-
-export default model("Characters", charactersSchema);
+}

@@ -1,6 +1,4 @@
-import { Schema, model } from "mongoose";
-
-const comicsSchema = new Schema({
+export interface comicsType {
     id: Number,
     title: String,
     isbn: String,
@@ -43,7 +41,5 @@ const comicsSchema = new Schema({
             name: String,
         },
         returned: Number
-    },
-}, { timestamps: true });
-
-export default model("Comics", comicsSchema);
+    }
+}
