@@ -49,7 +49,7 @@ class comicsController {
             res.status(500).json({ error: "Erro ao buscar quadrinho no banco" });
         }
     }
-    
+
     async findByIdBanco(req: Request, res: Response) {
         try {
             const id = req.params.id;
@@ -81,6 +81,16 @@ class comicsController {
     async delete(req: Request, res: Response) {
         const deleteMessage = await comicsService.delete(req.params.id)
         return res.json(deleteMessage)
+    }
+
+    async findComicByName(req: Request, res: Response) {
+        const comics = await comicsService.findComicByName(req.params.title);
+        return res.json(comics)
+    }
+
+    async findComicsMorethan25Pages(req: Request, res: Response) {
+        const findedComics = await comicsService.findComicsMorethan25Pages();
+        return res.json(findedComics)
     }
 }
 

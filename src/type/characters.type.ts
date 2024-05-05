@@ -10,10 +10,6 @@ export interface charactersType{
     comics: {
         available: Number,
         collectionURI: String,
-        items: {
-            resourceURI: String,
-            name: String,
-        },
         returned: Number
     },
     imgUrl: String

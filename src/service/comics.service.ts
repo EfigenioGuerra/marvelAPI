@@ -24,7 +24,7 @@ class comicsService {
     }
 
     async findByIdBanco(id: string) {
-        const comicFound = await comicsSchema.findById(id)
+        const comicFound = await comicsSchema.findOne({ id })
         return comicFound;
     }
 
@@ -66,6 +66,16 @@ class comicsService {
         } catch (error) {
             throw new Error(`Erro ao remover quadrinho: ${error}`)
         }
+    }
+
+    async findComicByName(title: any) {
+        const foundComic = await comicsSchema.find({ title: { $regex: title, $options: 'i' } });
+        return foundComic;
+    }
+
+    async findComicsMorethan25Pages() {
+        const findedComics = await comicsSchema.find({ pageCount: { $gt: 35 } });
+        return findedComics;
     }
 }
 

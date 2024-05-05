@@ -19,7 +19,7 @@ class creatorService {
     }
 
     async findByIdBanco(id: string) {
-        const findedCreator = await creatorsSchema.findById(id);
+        const findedCreator = await creatorsSchema.findOne({ id })
         return findedCreator;
     }
 
@@ -55,6 +55,11 @@ class creatorService {
         } catch (error) {
             throw new Error(`Erro ao remover criador: ${ error }`)
         }
+    }
+
+    async findCreatorByName(fullName: any) {
+        const foundCharacter = await creatorsSchema.findOne({ fullName: { $regex: fullName, $options: 'i' } });
+        return foundCharacter;
     }
 }
 
