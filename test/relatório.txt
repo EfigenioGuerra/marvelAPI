@@ -1,0 +1,23 @@
+                            RESULTADO DOS TESTES
+
+
+------------------------------Test Suites-----------------------------------
+
+Suítes de Teste Falhadas: 5
+Suítes de Teste Passadas: 4
+Total de Suítes de Teste: 9
+
+------------------------------Testes-----------------------------------
+
+Testes Falhados: 11
+Testes Passados: 29
+Total de Testes: 40
+
+------------------------------Snapshots-----------------------------------
+
+Snapshots Criados: 0
+
+------------------------------Tempo-----------------------------------
+
+Tempo de Execução Total: 18.776 s
+Tempo Estimado: 24 s
