@@ -1,7 +1,7 @@
 # Guia Detalhado da API
 Este guia detalha as funcionalidades de cada rota disponível na API, ajudando você a entender como interagir com ela.
 
-Busca de Personagens
+# Busca de Personagens
 # GET /characters
 
 Esta rota retorna uma lista de todos os personagens disponíveis.
@@ -10,21 +10,21 @@ Esta rota retorna uma lista de todos os personagens disponíveis.
 
 Retorna os detalhes de um personagem específico com o ID fornecido.
 
-Busca de Quadrinhos
+# Busca de Quadrinhos
 # GET /comics
 Retorna uma lista de todos os quadrinhos disponíveis.
 
 # GET /comics/:id
 Retorna os detalhes de um quadrinho específico com o ID fornecido.
 
-Busca de Escritores
+# Busca de Escritores
 # GET /creators
 Retorna uma lista de todos os escritores disponíveis.
 
 # GET /creators/:id
 Retorna os detalhes de um escritor específico com o ID fornecido.
 
-Operações no Banco de Dados - Personagens
+# Operações no Banco de Dados - Personagens
 # GET /charactersDB
 Retorna uma lista de todos os personagens armazenados no banco de dados.
 
