@@ -85,6 +85,11 @@ class creatorController {
         const deleteMessage = await creatorService.delete(req.params.id)
         return res.json(deleteMessage)
     }
+
+    async findCreatorByName(req: Request, res: Response) {
+        const comics = await creatorService.findCreatorByName(req.params.fullName);
+        return res.json(comics);
+    }
 }
 
 export default new creatorController;

@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import characterSchema from "../schema/characters.schema";
 import characterService from "../service/characters.service";
 import axios from "axios";
+import creatorsService from "../service/creators.service";
 
 class charactersController {
 
@@ -84,6 +85,22 @@ class charactersController {
         const deleteMessage = await characterService.delete(req.params.id)
         return res.json(deleteMessage)
     }
+
+    async findCharactersWithComicsAbove1000(req: Request, res: Response) {
+        try {
+            const characters = await characterService.findCharactersWithComicsAbove1000();
+            res.json(characters);
+        } catch (error) {
+            console.error('Error finding characters with comics above 1000:', error);
+            res.status(500).json({ error: 'Failed to find characters with comics above 1000' });
+        }
+    }
+
+    async findCharacterByName(req: Request, res: Response) {
+        const character = await characterService.findCharacterByName(req.params.name);
+        return res.json(character);
+    }
+
 }
 
 export default new charactersController;

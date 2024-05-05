@@ -35,15 +35,21 @@ routes.put('/comicsDB/:id', comicsController.update);
 routes.delete('/comicsDB/:id', comicsController.delete);
 
 //ROTAS ESCRITORES BANCO
-routes.get('/charactersDB', creatorsController.findAllBanco);       
-routes.get('/charactersDB/:id', creatorsController.findByIdBanco);
-routes.post('/charactersDB', creatorsController.create);
-routes.put('/charactersDB/:id', creatorsController.update);
-routes.delete('/charactersDB/:id', creatorsController.delete);
+routes.get('/creatorsDB', creatorsController.findAllBanco);       
+routes.get('/creatorsDB/:id', creatorsController.findByIdBanco);
+routes.post('/creatorsDB', creatorsController.create);
+routes.put('/creatorsDB/:id', creatorsController.update);
+routes.delete('/creatorsDB/:id', creatorsController.delete);
 
 /*------------------------------------------------------------------------------------------------*/
 
 //ROTAS ADICONAIS
+//Personagem com mais de 1000 quadrinhos publicados
+routes.get('/charactersDB/nome/:name', charactersController.findCharacterByName)
+routes.get('/comicsDB/title/:title', comicsController.findComicByName)
+routes.get('/creatorsDB/creator/:fullName', creatorsController.findCreatorByName)
+routes.get('/charactersDB/maisQueMilComics', charactersController.findCharactersWithComicsAbove1000)
+routes.get('/comicsDB/comicsComMaisDe25Paginas', comicsController.findComicsMorethan25Pages)
 
 
 export{
